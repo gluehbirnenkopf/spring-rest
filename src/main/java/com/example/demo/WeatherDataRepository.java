@@ -21,9 +21,10 @@ public class WeatherDataRepository {
     public void create(WeatherData record) {
         if(record.getId() == null) {
             record.setId(nextId);
+            logger.info("Creating id: "+nextId);
             nextId++;
         }
-
+    	logger.info("Saving Record with id: "+record.getId());
         data.put(record.getId(), record);
     }
 

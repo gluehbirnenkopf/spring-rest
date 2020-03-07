@@ -36,9 +36,9 @@ public class WeatherDataController {
         return this.dataRepository.findAll();
     }
     
-    @RequestMapping(method = RequestMethod.GET, path = "/weather1/{id}")
+    @RequestMapping(method = RequestMethod.GET, path = "/weather/{id}")
     public WeatherData retrieveWeatherData(@PathVariable int id) {
-    	logger.info("User queried id: ", id);
+    	logger.info("User queried id: "+id);
     	return dataRepository.findById(id);
     }
 }
