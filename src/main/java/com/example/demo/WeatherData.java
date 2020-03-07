@@ -4,6 +4,12 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import lombok.Data;
+import lombok.AccessLevel;
+import lombok.Setter;
+import lombok.Getter;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.ToString;
 
 @Data
 public class WeatherData {
@@ -19,10 +25,9 @@ public class WeatherData {
     private Double longitude;
 	public Object getId() {
 		// TODO Auto-generated method stub
-		return null;
+		return id;
 	}
-	public void setId(int nextId) {
-		// TODO Auto-generated method stub
-		
+	public void setId(int id) {
+		this.id=id;
 	}
 }

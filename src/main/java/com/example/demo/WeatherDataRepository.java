@@ -3,12 +3,16 @@ package com.example.demo;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
+import com.example.demo.WeatherData;
+import lombok.Data;
+import lombok.Setter;
+import lombok.Getter;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
 
-
+@Data
 @Repository
 public class WeatherDataRepository {
 
@@ -21,8 +25,9 @@ public class WeatherDataRepository {
     public void create(WeatherData record) {
         if(record.getId() == null) {
             record.setId(nextId);
-            logger.info("Creating id: "+nextId);
+            logger.info("Creating Weather Data record with id: "+nextId);
             nextId++;
+            logger.info("Incremented id: "+nextId);
         }
     	logger.info("Saving Record with id: "+record.getId());
         data.put(record.getId(), record);
